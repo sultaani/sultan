@@ -1,0 +1,61 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="profileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#64ffda;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#4fc3f7;stop-opacity:1" />
+        </linearGradient>
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#64ffda" flood-opacity="0.3"/>
+        </filter>
+    </defs>
+    
+    <!-- Background Circle -->
+    <circle cx="200" cy="200" r="190" fill="url(#profileGradient)" filter="url(#shadow)" opacity="0.1"/>
+    
+    <!-- Outer Ring -->
+    <circle cx="200" cy="200" r="180" fill="none" stroke="url(#profileGradient)" stroke-width="2" opacity="0.8"/>
+    
+    <!-- Main Profile Area -->
+    <circle cx="200" cy="200" r="160" fill="#112240" stroke="url(#profileGradient)" stroke-width="3"/>
+    
+    <!-- Profile Icon -->
+    <g transform="translate(200, 200)">
+        <!-- Head -->
+        <circle cx="0" cy="-40" r="35" fill="url(#profileGradient)" opacity="0.8"/>
+        
+        <!-- Body -->
+        <path d="M -50 60 Q -50 20 -30 20 L 30 20 Q 50 20 50 60 L 50 80 L -50 80 Z" 
+              fill="url(#profileGradient)" opacity="0.8"/>
+        
+        <!-- Decorative Elements -->
+        <circle cx="-60" cy="-60" r="3" fill="#64ffda" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="60" cy="-60" r="3" fill="#4fc3f7" opacity="0.6">
+            <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="-70" cy="0" r="2" fill="#64ffda" opacity="0.4">
+            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="70" cy="0" r="2" fill="#4fc3f7" opacity="0.4">
+            <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+    
+    <!-- Rotating Ring -->
+    <circle cx="200" cy="200" r="200" fill="none" stroke="url(#profileGradient)" 
+            stroke-width="1" opacity="0.3" stroke-dasharray="10 10">
+        <animateTransform attributeName="transform" type="rotate" 
+                          values="0 200 200;360 200 200" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Text -->
+    <text x="200" y="350" text-anchor="middle" fill="#64ffda" font-family="Poppins, sans-serif" 
+          font-size="16" font-weight="500" opacity="0.8">
+        Sultan Ipinmisho
+    </text>
+    <text x="200" y="370" text-anchor="middle" fill="#8892b0" font-family="Poppins, sans-serif" 
+          font-size="12" opacity="0.6">
+        Software Developer
+    </text>
+</svg>

@@ -1,0 +1,110 @@
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="projectGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#64ffda;stop-opacity:0.8" />
+            <stop offset="50%" style="stop-color:#4fc3f7;stop-opacity:0.6" />
+            <stop offset="100%" style="stop-color:#64ffda;stop-opacity:0.4" />
+        </linearGradient>
+        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#64ffda" stroke-width="0.5" opacity="0.3"/>
+        </pattern>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="300" height="200" fill="#112240" stroke="#64ffda" stroke-width="1" opacity="0.8"/>
+    
+    <!-- Grid Pattern -->
+    <rect width="300" height="200" fill="url(#grid)"/>
+    
+    <!-- Main Content Area -->
+    <rect x="20" y="20" width="260" height="160" fill="url(#projectGradient)" rx="10" opacity="0.2"/>
+    
+    <!-- Browser/App Window -->
+    <rect x="30" y="30" width="240" height="140" fill="#0a192f" rx="8" stroke="#64ffda" stroke-width="1"/>
+    
+    <!-- Header Bar -->
+    <rect x="30" y="30" width="240" height="30" fill="#64ffda" opacity="0.1" rx="8 8 0 0"/>
+    
+    <!-- Window Controls -->
+    <circle cx="45" cy="45" r="4" fill="#ff5f57" opacity="0.8"/>
+    <circle cx="60" cy="45" r="4" fill="#ffbd2e" opacity="0.8"/>
+    <circle cx="75" cy="45" r="4" fill="#28ca42" opacity="0.8"/>
+    
+    <!-- Content Blocks -->
+    <rect x="45" y="80" width="80" height="8" fill="#64ffda" opacity="0.6" rx="2">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="135" y="80" width="120" height="8" fill="#4fc3f7" opacity="0.4" rx="2">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <rect x="45" y="100" width="150" height="6" fill="#64ffda" opacity="0.3" rx="2"/>
+    <rect x="45" y="115" width="100" height="6" fill="#4fc3f7" opacity="0.3" rx="2"/>
+    <rect x="155" y="115" width="70" height="6" fill="#64ffda" opacity="0.3" rx="2"/>
+    
+    <!-- Chart/Graph Area -->
+    <g transform="translate(180, 100)">
+        <rect width="70" height="50" fill="#64ffda" opacity="0.1" rx="4"/>
+        
+        <!-- Simple Bar Chart -->
+        <rect x="10" y="35" width="8" height="10" fill="#64ffda" opacity="0.8">
+            <animate attributeName="height" values="10;20;10" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="35;25;35" dur="3s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="25" y="30" width="8" height="15" fill="#4fc3f7" opacity="0.8">
+            <animate attributeName="height" values="15;25;15" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="30;20;30" dur="2s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="40" y="25" width="8" height="20" fill="#64ffda" opacity="0.8">
+            <animate attributeName="height" values="20;30;20" dur="2.5s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="25;15;25" dur="2.5s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="55" y="20" width="8" height="25" fill="#4fc3f7" opacity="0.8">
+            <animate attributeName="height" values="25;35;25" dur="1.8s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="20;10;20" dur="1.8s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+    
+    <!-- Code-like Elements -->
+    <g transform="translate(45, 135)">
+        <rect width="4" height="4" fill="#64ffda" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.4;0.8" dur="1s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="10" y="0" width="30" height="4" fill="#4fc3f7" opacity="0.6" rx="1"/>
+        <rect x="45" y="0" width="20" height="4" fill="#64ffda" opacity="0.4" rx="1"/>
+        
+        <rect x="0" y="10" width="25" height="4" fill="#4fc3f7" opacity="0.5" rx="1"/>
+        <rect x="30" y="10" width="35" height="4" fill="#64ffda" opacity="0.5" rx="1"/>
+        
+        <rect x="10" y="20" width="40" height="4" fill="#64ffda" opacity="0.4" rx="1"/>
+        <rect x="55" y="20" width="15" height="4" fill="#4fc3f7" opacity="0.4" rx="1"/>
+    </g>
+    
+    <!-- Floating Elements -->
+    <circle cx="50" cy="50" r="2" fill="#64ffda" opacity="0.6" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" 
+                          values="0 0;10 -5;0 0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="170" r="3" fill="#4fc3f7" opacity="0.5" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="translate" 
+                          values="0 0;-8 -8;0 0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Project Icon -->
+    <g transform="translate(150, 100)">
+        <circle r="15" fill="none" stroke="#64ffda" stroke-width="2" opacity="0.8">
+            <animate attributeName="stroke-dasharray" values="0 94;47 47;0 94" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <polygon points="0,-8 -7,4 7,4" fill="#64ffda" opacity="0.9">
+            <animateTransform attributeName="transform" type="rotate" 
+                              values="0;360" dur="10s" repeatCount="indefinite"/>
+        </polygon>
+    </g>
+</svg>
