@@ -39,6 +39,19 @@ html[data-world='night'] .hero__orb::after { content: ''; position: absolute; in
 .roles__item[data-state='out'] { transform: translateY(-110%); opacity: 0; }
 .roles__item[data-state='in'] { transform: translateY(110%); opacity: 0; }
 
+/* floating call-to-action buttons */
+.hero__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 1.25rem; margin-top: clamp(0.4rem, 1.5vw, 1rem); }
+.hero__cta .float { display: inline-block; animation: float 5.5s ease-in-out infinite; animation-delay: calc(var(--f, 0) * -2.2s); }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.hero__cta .btn { min-height: 3.2rem; padding-inline: 1.9rem; box-shadow: 0 14px 30px -14px rgb(42 27 20 / 0.55); }
+.hero__cta .btn--primary { background: #b9472a; }
+.hero__cta .btn--primary:hover { background: #8f3318; }
+.btn--float { background: var(--surface); color: var(--ink); border-color: var(--line-strong); }
+.btn--float:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+html[data-world='night'] .hero .btn--float { background: rgb(246 239 230 / 0.1); color: #f6efe6; border-color: rgb(246 239 230 / 0.55); box-shadow: 0 14px 30px -14px rgb(0 0 0 / 0.8); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+html[data-world='night'] .hero .btn--float:hover { background: #f6efe6; color: #2a1b14; border-color: #f6efe6; }
+html[data-world='night'] .hero .btn--primary { box-shadow: 0 14px 30px -14px rgb(0 0 0 / 0.8); }
+
 /* the skyline */
 .city { position: absolute; left: 0; right: 0; bottom: 0; height: 38svh; display: flex; align-items: flex-end; gap: clamp(3px, 0.5vw, 8px); padding-inline: clamp(0.5rem, 2vw, 1.5rem); z-index: 1; }
 .city::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--h-edge); transition: background 1.2s; }
@@ -81,7 +94,7 @@ html[data-world='night'] .scene__code rect { opacity: 0.75; }
 .scene__hit { position: absolute; left: 66%; top: 6%; width: 34%; height: 30%; background: transparent; border: 0; border-radius: 12px; pointer-events: auto; }
 .scene__hit:focus-visible { outline: 3px solid #f2a98a; outline-offset: 2px; }
 html[data-world='day'] .scene__hit:focus-visible { outline-color: var(--clay); }
-@media (max-width: 640px) { .scene { right: -1.5rem; height: clamp(150px, 30svh, 230px); } .hero__orb { top: 14%; } }
+@media (max-width: 640px) { .scene { right: 0.25rem; height: clamp(150px, 30svh, 220px); } .hero__orb { top: 14%; } }
 
 /* ==========================================================================
    About

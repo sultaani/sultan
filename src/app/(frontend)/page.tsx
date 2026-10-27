@@ -26,7 +26,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero name={site.siteName} profile={profile} />
+      <Hero name={site.siteName} profile={profile} resumeUrl={resume} />
       <About profile={profile} />
 
       <section id="services" className="section section--sand" data-section="services" aria-labelledby="sv-h">

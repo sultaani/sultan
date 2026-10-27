@@ -139,7 +139,10 @@ html[data-calm='true'] .scroll-progress { display: none; }
 html[data-contrast='high'] .site-header.is-stuck { background: #fff; }
 .site-header.is-hidden { transform: translateY(-100%); }
 .site-header .container { max-width: 1320px; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-.brand { font-size: 1.15rem; font-weight: 500; letter-spacing: -0.01em; white-space: nowrap; }
+.brand { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.03em; white-space: nowrap; line-height: 1; color: var(--ink); padding: 0.4rem 0; }
+.brand__dot { color: #c42a16; }
+html[data-world='night'] .site-header.on-night .brand__dot { color: #ff5a3c; }
+html[data-contrast='high'] .brand__dot { color: #a01a08; }
 .nav { display: none; align-items: center; gap: clamp(1rem, 2vw, 2rem); }
 .nav a { position: relative; font-size: 0.95rem; color: var(--ink-2); padding: 0.5rem 0; transition: color 0.2s; }
 .nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0.15rem; height: 2px; background: var(--terra); transform: scaleX(0); transform-origin: left; transition: transform 0.35s var(--ease); }

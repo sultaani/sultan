@@ -18,6 +18,7 @@ export const NAV = [
 
 export function Header({ siteName }: { siteName: string }) {
   const pathname = usePathname()
+  const mark = siteName.split(/\s+/).filter(Boolean).map((w) => w[0]).join('').toUpperCase().slice(0, 3) || 'SI'
   const home = pathname === '/'
   const [stuck, setStuck] = useState(false)
   const [hidden, setHidden] = useState(false)
@@ -69,7 +70,7 @@ export function Header({ siteName }: { siteName: string }) {
   return (
     <header className={`site-header${stuck ? ' is-stuck' : ''}${home && world === 'night' && !stuck && !open ? ' on-night' : ''}${hidden && !open ? ' is-hidden' : ''}`}>
       <div className="container">
-        <TLink href="/" className="brand" onClick={() => setOpen(false)}>{siteName}</TLink>
+        <TLink href="/" className="brand" aria-label={`${siteName}, home`} onClick={() => setOpen(false)}><span aria-hidden="true">{mark}</span><span className="brand__dot" aria-hidden="true">.</span></TLink>
 
         <nav className="nav" aria-label="Primary">
           {NAV.map((n) => <Link key={n.id} href={`/#${n.id}`} aria-current={cur(n.id)}>{n.label}</Link>)}

@@ -2,8 +2,9 @@ import type { Profile } from '@/payload-types'
 import { CityGrid } from './CityGrid'
 import { RoleRoller } from './RoleRoller'
 import { Scene } from './Scene'
+import { ArrowRight } from '../Icons'
 
-export function Hero({ name, profile }: { name: string; profile: Profile }) {
+export function Hero({ name, profile, resumeUrl }: { name: string; profile: Profile; resumeUrl?: string | null }) {
   const roles = (profile.roles || []).map((r) => r.text).filter(Boolean)
   return (
     <section className="hero" data-section="hero" aria-labelledby="hero-title">
@@ -11,6 +12,16 @@ export function Hero({ name, profile }: { name: string; profile: Profile }) {
       <div className="hero__inner">
         <h1 id="hero-title" className="hero__name hero-anim">{name}</h1>
         <div className="hero-anim" style={{ ['--k' as string]: 1 }}><RoleRoller roles={roles} /></div>
+        <div className="hero__cta hero-anim" style={{ ['--k' as string]: 2 }}>
+          <span className="float" style={{ ['--f' as string]: 0 }}>
+            <a className="btn btn--primary btn--lift" href="#contact">Contact me<ArrowRight /></a>
+          </span>
+          <span className="float" style={{ ['--f' as string]: 1 }}>
+            {resumeUrl
+              ? <a className="btn btn--float btn--lift" href={resumeUrl} target="_blank" rel="noopener noreferrer">View my resume<span className="sr-only"> (PDF, opens in a new tab)</span></a>
+              : <a className="btn btn--float btn--lift" href="#journey">View my resume</a>}
+          </span>
+        </div>
       </div>
       <CityGrid />
       <Scene />
